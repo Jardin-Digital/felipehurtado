@@ -1,66 +1,184 @@
-/* MODO CLARO = SEPIA/AMARILLO (Lectura de diario) */
+/* Jardín Digital — tipografía sobria, profesional y compatible con Hugo. */
+
+:root {
+    --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   "Helvetica Neue", Helvetica, Arial, "Noto Sans",
+                   "Liberation Sans", sans-serif;
+    --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                    "Helvetica Neue", Helvetica, Arial, "Noto Sans",
+                    "Liberation Sans", sans-serif;
+}
+
 :root[data-scheme="light"] {
-    --body-background: #fdf6e3; /* Fondo crema */
-    --card-background: #eee8d5; /* Tarjetas un poco más oscuras */
-    --text-color-main: #586e75; /* Texto gris azulado suave */
-    --text-color-title: #268bd2; /* Títulos en azul suave */
+    --body-background: #f5f5f7;
+    --card-background: #ffffff;
+    --card-background-selected: #f0f0f2;
+    --text-color-main: #343438;
+    --text-color-secondary: #6e6e73;
+    --text-color-title: #1d1d1f;
+    --accent-color: #245ea8;
+    --blockquote-background-color: #f5f5f7;
 }
 
-/* MODO OSCURO = TERMINAL/OBSIDIAN (Pensamiento sistémico) */
 :root[data-scheme="dark"] {
-    --body-background: #0d1117; /* Negro profundo GitHub */
-    --card-background: #161b22; 
-    --text-color-main: #c9d1d9;
-    --accent-color: #2ea043; /* Verde éxito/terminal */
+    --body-background: #0f0f10;
+    --card-background: #1c1c1e;
+    --card-background-selected: #252527;
+    --text-color-main: #e5e5e7;
+    --text-color-secondary: #a1a1a6;
+    --text-color-title: #f5f5f7;
+    --accent-color: #79aef2;
+    --blockquote-background-color: #242426;
 }
 
-/* Tipografía general */
+html {
+    font-size: 16px;
+}
+
 body {
-  font-family: "Montserrat", system-ui, sans-serif;
+    font-family: var(--font-system);
+    font-weight: 400;
+    letter-spacing: -0.006em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
-/* Cuerpo de los posts */
 .article-content {
-  font-family: "Merriweather", Georgia, serif;
-  font-size: 1.95rem;
-  line-height: 1.85;
+    font-family: var(--font-system);
+    font-size: 1.08rem;
+    line-height: 1.72;
+    font-weight: 400;
+    letter-spacing: -0.006em;
+    color: var(--text-color-main);
 }
 
-/* Títulos */
+.article-content p,
+.article-content li,
+.article-content dd,
+.article-content dt {
+    font-weight: 400;
+}
+
+.article-content p {
+    margin-block: 1.12em;
+}
+
 .article-title,
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat", system-ui, sans-serif;
-  letter-spacing: -0.02em;
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+    font-family: var(--font-display);
+    color: var(--text-color-title);
+    letter-spacing: -0.025em;
 }
 
-/* Links rosados */
+.article-title {
+    font-weight: 600;
+    line-height: 1.14;
+}
+
+.article-content h1 {
+    font-weight: 650;
+    line-height: 1.14;
+}
+
+.article-content h2 {
+    font-weight: 600;
+    line-height: 1.22;
+    margin-top: 2em;
+}
+
+.article-content h3,
+.article-content h4 {
+    font-weight: 600;
+    line-height: 1.3;
+    margin-top: 1.65em;
+}
+
+.article-list article .article-title,
+.article-list--compact .article-title {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.menu,
+.article-subtitle,
+.article-time,
+.article-translations,
+.widget,
+.site-description {
+    font-family: var(--font-system);
+    font-weight: 400;
+}
+
+.menu li a {
+    font-weight: 500;
+}
+
+.site-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.022em;
+}
+
+strong,
+b,
+.article-content strong,
+.article-content b {
+    font-weight: 600;
+}
+
 .article-content a,
 .main-article a,
 .article-title a {
-  color: var(--accent-color);
-  text-decoration: none;
-  font-weight: 600;
+    color: var(--accent-color);
+    font-weight: 400;
+    text-decoration-thickness: 0.075em;
+    text-underline-offset: 0.16em;
 }
 
 .article-content a:hover,
 .main-article a:hover,
 .article-title a:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.12em;
+    text-decoration: underline;
 }
 
-/* Cursivas más elegantes */
-.article-content em {
-  font-style: italic;
-}
-
-/* Bloques de cita con más personalidad */
 .article-content blockquote {
-  border-left: 4px solid var(--accent-color);
-  padding-left: 1rem;
-  font-style: italic;
+    margin: 1.65em 0;
+    padding: 0.85em 1.15em;
+    border-left: 3px solid var(--accent-color);
+    border-radius: 0 8px 8px 0;
+    font-style: normal;
+    font-weight: 400;
+    background: var(--blockquote-background-color);
 }
 
+.article-content blockquote p {
+    margin-block: 0.42em;
+}
 
-/* Si quieres que el "Blanco" sea el de defecto del sistema */
-/* El usuario podrá alternar entre Sepia y Oscuro con el botón del sol/luna */
+@media (min-width: 1024px) {
+    .article-page .main-article .article-content {
+        max-width: 74ch;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    html {
+        font-size: 15.5px;
+    }
+
+    .article-content {
+        font-size: 1.04rem;
+        line-height: 1.68;
+    }
+
+    .article-title {
+        line-height: 1.17;
+    }
+}

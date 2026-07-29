@@ -1,13 +1,11 @@
 ---
 title: "Querido Martín: carta número uno"
 date: 2026-03-22
-draft: false
+draft: true
 tags: ["martin", "cartas", "paternidad", "verdad", "personal"]
 summary: "Escribo esto rápido, por si algo me pasa. Para que exista mi versión. Para que sepas que estuve."
 importance: 10
 ---
-
-
 Escribo esto rápido, por si algo me pasa. Para que exista mi versión. Para que sepas que estuve."
 
 
