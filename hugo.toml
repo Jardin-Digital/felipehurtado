@@ -1,0 +1,52 @@
+title = "Felipe Hurtado"
+baseURL = "https://jardin-digital.github.io/felipehurtado/"
+theme = "hugo-theme-stack"
+enableGitInfo = false
+
+languageCode = "es"
+defaultContentLanguage = "es"
+
+[author]
+
+
+[params]
+  mainSections = ["post"]
+  description = "Memoria, lecturas, paternidad, decisiones y vida examinada."
+  # Aquí he metido tus temas y lecturas para que Hugo no de error
+  topics = ["Sistema educativo", "Política y poder", "Instituciones", "Cultura pública", "Historia del presente"]
+  actual_reads = ["Hobbes", "WatchMen", "Tiger"]
+  x_handle = "@phiLL3141"
+  birth = "1989"
+
+  # "auto" permite que el visitante elija con un botón de sol/luna
+    defaultMode = "auto" 
+    # Esto activa el switch visual en la barra lateral
+    displayModeSwitch = true
+
+      # ... color de página ...
+    [params.style]
+        defaultMode = "auto"
+        displayModeSwitch = true
+
+  [params.sidebar]
+    subtitle = "Memoria. Lo que rescato de mi diario."
+    enabled = true
+    local = true
+    src = "img/avatar.jpg"
+  
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+  [params.avatar]
+    enabled = true
+    local = true
+    src = "img/avatar.jpg"
+
+    [outputs]
+    home = ["HTML", "RSS", "JSON"]
+
+[params.search]
+    enabled = true
